@@ -63,3 +63,28 @@ Keep the API server and website server windows open while using the app.
 - Do not commit `node_modules`.
 - Rotate API keys if they are ever pasted publicly.
 - This project is in beta, so test PDFs carefully before sharing widely.
+
+## Deployment Notes
+
+For production, the API server can also serve the built frontend.
+
+Recommended build command:
+
+```bash
+pnpm install --frozen-lockfile && pnpm run build
+```
+
+Recommended start command:
+
+```bash
+pnpm run start
+```
+
+Set these environment variables on your hosting provider:
+
+```env
+NODE_ENV=production
+GEMINI_API_KEY=
+GROQ_API_KEY=
+OPENAI_API_KEY=
+```

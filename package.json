@@ -6,7 +6,8 @@
     "preinstall": "node scripts/ensure-pnpm.cjs",
     "dev:api": "pnpm --filter @workspace/api-server run dev",
     "dev:web": "pnpm --filter @workspace/mock-test run dev",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "start": "pnpm --filter @workspace/api-server run start",
+    "build": "pnpm run typecheck && pnpm --filter @workspace/mock-test run build && pnpm --filter @workspace/api-server run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
